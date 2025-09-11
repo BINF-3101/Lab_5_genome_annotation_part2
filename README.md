@@ -105,6 +105,9 @@ squeue -u username
 
 This should take ~10 minutes. While you wait, answer the question below. 
 
+&ensp;
+&ensp;
+
 # LQ 1
 The funannotate command we used was
 `funannotate annotate --gff SRRXXXXXX.gff3 --fasta SRRXXXXXX.scaffolds.fa -s SRRXXXXXX -o SRRXXXXXX --cpus 4`
@@ -117,6 +120,8 @@ Read about the GFF3 file here: https://useast.ensembl.org/info/website/upload/gf
 
 **Question** - Select the **types** found in our GFF3 files
 
+&ensp;
+&ensp;
 
 ## Step 3 - Generate protein sequences
 
@@ -159,63 +164,39 @@ What is the **name** of your genetic code listed on the NCBI website?
 &ensp;
 &ensp;
 
-## Step 3b - Translate your coding sequences
+## Step 3 - Analyze your annotation results
 
-To translate our DNA into amino acid sequences we will use emboss again. We will use the ```transeq``` 
+Once the annotation process is done you will be able to find a file `SRRXXXXXX/annotate_results/SRRXXXXXXX.annotations.txt
 
-The number you should fill in is the number of your translation table
+We will be analyzing that file so move to that folder. 
 
-```bash
-#unload all your programs/modules
+### Step 3a - Number of genes annotated
 
-module purge
+The "name" of our gene will be in the 8th column of the annotation.txt file. 
 
-#load emboss
-module load emboss
+To calculate this, we will need to string together several commands. 
 
+**Command 1** - get only the 8th column
+`cut -f8 SRRXXXXX.annotations.txt`
 
-transeq SRRXXXXXXXX.cds-transcripts.fa  SRRXXXXXXXX.prot.fasta -table FILLIN
+**Command 2** - sort the 8th column
+`sort`
 
-#look at your files
-ls
-```
+**Command 3** - get only the unique values 
 
-This will translate our DNA into Protein using the translation table you found above. 
+Now let's string them all together using the pipe `|` command so that the results of one command get sent to the next 
 
-&ensp;
-&ensp;
-&ensp;
+`cut -f8 SRRXXXXX.annotations.txt | sort | uniq`
 
-## Step 10 - BUSCO results
+**Command 4** - now we want to count the number of genes using `wc -l` which counts the number of lines 
 
-After an hour or so you should have received two emails about your BUSCO results
-
-![image](https://github.com/BINF-3101/Lab_5_genome_annotation_part2/assets/47755288/d643efc9-12dd-498b-b4e8-ff97c42a8926)
-
-One will have an attached PNG describing the results and the other will have an interactive HTML document. 
-
-&ensp;
-&ensp;
-
-### Step 10a - Download and open HTML file
-
-Download and open your HTML file. When you **scroll over the plot** you should see the percentage next to each bar. 
-
-![image](https://github.com/BINF-3101/Lab_5_genome_annotation_part2/assets/47755288/747aa2f3-1521-4957-ae5b-d0e2fc618f71)
-
-This will tell us how "complete" our genome annotation is. 
-
-**Make sure to save the png and HTML somewhere for later**
+`cut -f8 SRRXXXXX.annotations.txt | sort | uniq | wc -l`
 
 &ensp;
 
-# LQ 5
-What percent of BUSCO annotations were 
-- Missing (M)
-- Fragmented (F)
-- Duplicated (D)
-- Complete & Single Copy (C)
+# LQ 3
 
+How many genes were functionally annotated in your genome?
 
 
 
