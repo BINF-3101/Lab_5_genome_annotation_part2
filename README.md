@@ -5,9 +5,13 @@
 
 [Step 1 - Lab setup](#step-1---lab-setup)
 
-[Step 2 - Prepare files for annotation](#step-2---prepare-files-for-annotation)
+[Step 2 - Functional Annotation](#step-2---functional-annotation)
 
-[Step 3 - Download your files](#step-3---download-your-files)
+[Lab Question 1](#lq-1)
+
+[Step 3 - Generate protein sequences](#step-3---generate-protein-sequences)
+
+[Lab Question 2](#lq-2)
 
 [Step 4 - Upload files to GenomeQC](#step-4---upload-files-to-genomeqc)
 
@@ -15,7 +19,7 @@
 
 [Step 6 - Record your Annotation Metrics results](#step-6---record-your-annotation-metrics-results)
 
-[Lab Question 1](#lq-1)
+
 
 [Step 7 - Generate your DNA coding sequences](#step-7---generate-your-dna-coding-sequences)
 
@@ -164,13 +168,33 @@ What is the **name** of your genetic code listed on the NCBI website?
 &ensp;
 &ensp;
 
-## Step 3 - Analyze your annotation results
+## Step 3b - Translate your DNA to Proteins 
+
+We will use this next week! 
+
+We will use transeq to translate our DNA into Protein 
+
+Use the command below but replace
+INPUT = SRRXXXXXXX.cds-transcripts.fa
+OUTPUT = SRRXXXXXXX.prot.fa
+CODON_TABLE = the **number** of your codon table above
+
+```
+module purge
+module load emboss
+transeq -sequence INPUT -outseq OUTPUT -table CODON_TABLE
+```
+
+&ensp;
+&ensp;
+
+## Step 4 - Analyze your annotation results
 
 Once the annotation process is done you will be able to find a file `SRRXXXXXX/annotate_results/SRRXXXXXXX.annotations.txt
 
 We will be analyzing that file so move to that folder. 
 
-### Step 3a - Number of genes annotated
+### Step 4a - Number of genes annotated
 
 The "name" of our gene will be in the 8th column of the annotation.txt file. 
 
