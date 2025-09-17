@@ -13,29 +13,10 @@
 
 [Lab Question 2](#lq-2)
 
-[Step 4 - Upload files to GenomeQC](#step-4---upload-files-to-genomeqc)
-
-[Step 5 - Submit your job](#step-5---submit-your-job)
-
-[Step 6 - Record your Annotation Metrics results](#step-6---record-your-annotation-metrics-results)
-
-
-
-[Step 7 - Generate your DNA coding sequences](#step-7---generate-your-dna-coding-sequences)
-
-[Lab Question 2](#lq-2)
-
-[Step 8 - Filter your CDS file](#step-8---filter-your-cds-file)
+[Step 4 - Analyze your annotation results](#step-4---analyze-your-annotation-results)
 
 [Lab Question 3](#lq-3)
 
-[Step 9 - Generate your protein-coding sequences](#step-9---generate-your-protein-coding-sequences)
-
-[Lab Question 4](#lq-4)
-
-[Step 10 - BUSCO results](#step-10---busco-results)
-
-[LAb Question 5](#lq-5)
 
 
 We have now annotated our genomes. This means we have identified locations in the genome where we believe genes are located. 
