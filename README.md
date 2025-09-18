@@ -175,8 +175,6 @@ Once the annotation process is done you will be able to find a file `SRRXXXXXX/a
 
 We will be analyzing that file so move to that folder. 
 
-### Step 4a - Number of genes annotated
-
 The "name" of our gene will be in the 8th column of the annotation.txt file. 
 
 To calculate this, we will need to string together several commands. 
@@ -203,9 +201,79 @@ Now let's string them all together using the pipe `|` command so that the result
 
 How many genes were functionally annotated in your genome?
 
+&ensp;
+&ensp;
+
+## Step 5 - Find RIB1
+
+### Step 5a - Investigate the known function of RIB1.
+
+We will investigate the gene RIB1 in your genome.
+
+First, what is RIB1? Go to https://www.yeastgenome.org/ and search for RIB1. This portal has information on the known genes in the model yeast _S. cerevisiae_
+
+&ensp;
+
+# LQ 4 
+
+What biosynthetic pathway is RIB1 involved in? 
+
+&ensp;
+
+### Step 5b - Find the GeneID of your RIB1
+
+The GeneID (the identifier in your genome) for RIB1 will be in the 1st column of the RIB1 entry 
+
+To find the information about your RIB1 gene use the following command on your `SRRXXXXX.annotations.txt` file. 
+
+```bash
+grep "RIB1" SRRXXXXX.annotations.txt
+```
+
+# LQ 5 
+
+What is the GeneID associated with your RIB1 gene?
 
 
+### Step 5c - Get the protein sequence of RIB1 gene
 
+We will use the `awk` command to retrieve the protein sequence from the translated proteins you generated in step 3. This file is called `SRRXXXXXXX.prot.fa`
 
+You will replace YOUR_ID with the answer to LQ5. 
+
+```bash
+awk '/^>YOUR_ID/{flag=1; print; next} /^>/{flag=0} flag' SRRXXXXXXX.prot.fa > RIB1.prot
+
+You can look at your sequence using
+
+```bash
+cat RIB1.prot
+```
+
+### Step 5d - Compare your RIB1 with The _S. cerevisiae_ genome. 
+
+Go to https://www.yeastgenome.org/blast-sgd 
+
+Paste in your Protein Sequence and Select **BLASTP**
+
+Select **Run NCBI-BLAST** - you will get a pop-up box - press ok. 
+
+<img width="1219" height="959" alt="image" src="https://github.com/user-attachments/assets/25f84f39-0d97-444a-8a4b-244a802d5bf7" />
+
+You should now see a protein alignment of your RIB1 gene and a _S. cerevisiae_ gene. 
+
+Review the alignment and answer the questions below
+
+# LQ 6
+
+What percent of the amino acids in the alignment in your sequence match the _S. cerivisiae_ gene? This will be shown in the **Identities**
+
+# LQ 7 
+
+The **Expect** or **E** score tells us about the statistical chance that these two sequences would have this level of similarity by chance. A smaller Expect-value means a higher level of sequence similarity.
+
+We hypothesize that two sequences with an Expect-value less than E ≤ 1e-5 (or 0.00001) are homologs. 
+
+Is your sequence a homolog with the _S. cerevisiae_ gene? _REMINDER_ the higher the exponent (1e-1000) the smaller the number. 
 
 
