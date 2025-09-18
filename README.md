@@ -240,10 +240,13 @@ To find the information about your RIB1 gene use the following command on your `
 grep "RIB1" SRRXXXXX.annotations.txt
 ```
 
+&ensp;
+
 # LQ 5 
 
 What is the GeneID associated with your RIB1 gene?
 
+&ensp;
 
 ### Step 5c - Get the protein sequence of RIB1 gene
 
@@ -260,6 +263,8 @@ You can look at your sequence using
 cat RIB1.prot
 ```
 
+&ensp;
+
 ### Step 5d - Compare your RIB1 with The _S. cerevisiae_ genome. 
 
 Go to https://www.yeastgenome.org/blast-sgd 
@@ -274,9 +279,13 @@ You should now see a protein alignment of your RIB1 gene and a _S. cerevisiae_ g
 
 Review the alignment and answer the questions below
 
+&ensp;
+
 # LQ 6
 
 What percent of the amino acids in the alignment in your sequence match the _S. cerivisiae_ gene? This will be shown in the **Identities**
+
+&ensp;
 
 # LQ 7 
 
