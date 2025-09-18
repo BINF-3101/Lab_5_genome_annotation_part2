@@ -17,6 +17,16 @@
 
 [Lab Question 3](#lq-3)
 
+[Step 5 - Find RIB1](#step-5--find-rib1)
+
+[Lab Question 4](#lq-4)
+
+[Lab Question 5](#lq-5)
+
+[Lab Question 6](#lq-6)
+
+[Lab Question 7](#lq-7)
+
 
 
 We have now annotated our genomes. This means we have identified locations in the genome where we believe genes are located. 
@@ -275,5 +285,4 @@ The **Expect** or **E** score tells us about the statistical chance that these t
 We hypothesize that two sequences with an Expect-value less than E ≤ 1e-5 (or 0.00001) are homologs. 
 
 Is your sequence a homolog with the _S. cerevisiae_ gene? _REMINDER_ the higher the exponent (1e-1000) the smaller the number. 
-
 
