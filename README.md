@@ -187,7 +187,7 @@ To calculate this, we will need to string together several commands.
 **Command 2** - sort the 8th column
 `sort`
 
-**Command 3** - get only the unique values 
+**Command 3** - get only the unique values `uniq`
 
 Now let's string them all together using the pipe `|` command so that the results of one command get sent to the next 
 
